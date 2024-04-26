@@ -18,7 +18,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class Topic_06_WebBrowser_Commands {
+public class Topic_06_WebBrowser_Commands_01 {
     // Các câu lệnh để thao tác với Browser
     // driver.
     WebDriver driver;
@@ -53,7 +53,7 @@ public class Topic_06_WebBrowser_Commands {
     }
 
     @Test
-    public void TC_01_() throws MalformedURLException {
+    public void TC_01_Browser() throws MalformedURLException {
         // Mở ra 1 page Url bất kì
         driver.get("https://www.facebook.com/"); //**
 
@@ -163,11 +163,6 @@ public class Topic_06_WebBrowser_Commands {
 
         // Từ frame trong đi ra frame ngoài chứa nó
         driver.switchTo().parentFrame();
-
-    }
-
-    @Test
-    public void TC_02_() {
 
     }
 

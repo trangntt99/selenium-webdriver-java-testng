@@ -1,19 +1,15 @@
 package webdriver;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-public class Topic_07_WebElement_Commands {
+public class Topic_07_WebElement_Commands_01 {
     WebDriver driver;
 
     @BeforeClass

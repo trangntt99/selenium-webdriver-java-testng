@@ -8,6 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.security.Key;
 import java.time.Duration;
 import java.util.List;
 
@@ -162,17 +163,6 @@ public class Topic_07_WebElement_Commands_02 {
 
         driver.findElement(By.cssSelector("input#email")).sendKeys("automationfc@gmail.com");
 
-        // Case Empty Data
-        driver.findElement(By.cssSelector("input#new_password")).clear();
-        driver.findElement(By.cssSelector("button#create-account-enabled")).click();
-        sleepInSeconds(3);
-
-        Assert.assertTrue(driver.findElement(By.cssSelector("li.lowercase-char.not-completed")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.cssSelector("li.uppercase-char.not-completed")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.cssSelector("li.number-char.not-completed")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.cssSelector("li.special-char.not-completed")).isDisplayed());
-        Assert.assertTrue(driver.findElement(By.cssSelector("li[class='8-char not-completed']")).isDisplayed());
-
         // Case 1 - Number
         driver.findElement(By.cssSelector("input#new_password")).sendKeys("12345");
         Assert.assertTrue(driver.findElement(By.cssSelector("li.lowercase-char.not-completed")).isDisplayed());
@@ -225,6 +215,18 @@ public class Topic_07_WebElement_Commands_02 {
         Assert.assertFalse(driver.findElement(By.cssSelector("li.number-char.completed")).isDisplayed());
         Assert.assertFalse(driver.findElement(By.cssSelector("li.special-char.completed")).isDisplayed());
         Assert.assertFalse(driver.findElement(By.cssSelector("li[class='8-char completed']")).isDisplayed());
+
+        // Case 7 - Empty Data
+        driver.navigate().refresh();
+        driver.findElement(By.cssSelector("input#email")).sendKeys("automationfc@gmail.com");
+        driver.findElement(By.cssSelector("input#new_password")).sendKeys(Keys.TAB);
+        sleepInSeconds(3);
+
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.lowercase-char.not-completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.uppercase-char.not-completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.number-char.not-completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.special-char.not-completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("li[class='8-char not-completed']")).isDisplayed());
 
     }
 

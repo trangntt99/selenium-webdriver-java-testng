@@ -9,6 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 public class Topic_05_Run_More_Browser {
@@ -19,7 +20,7 @@ public class Topic_05_Run_More_Browser {
     @Test
     public void TC_01_Run_On_FireFox() {
         driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.get("https://www.facebook.com/");
         driver.quit();
     }
@@ -27,7 +28,7 @@ public class Topic_05_Run_More_Browser {
     @Test
     public void TC_02_Run_On_Chrome() {
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.get("https://www.facebook.com/");
         driver.quit();
     }
@@ -35,7 +36,7 @@ public class Topic_05_Run_More_Browser {
     @Test
     public void TC_03_Run_On_Edge() {
         driver = new EdgeDriver();
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.get("https://www.facebook.com/");
         driver.quit();
     }
@@ -44,7 +45,7 @@ public class Topic_05_Run_More_Browser {
     public void TC_04_Run_On_Safari() {
         if (osName.contains("Mac")) {
             driver = new SafariDriver();
-            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
             driver.get("https://www.facebook.com/");
             driver.quit();
         }

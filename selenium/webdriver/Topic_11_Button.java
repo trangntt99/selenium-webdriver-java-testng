@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class Topic_11_Button_Radio_Checkbox {
+public class Topic_11_Button {
     WebDriver driver;
     @BeforeClass
     public void beforeClass() {

@@ -10,6 +10,7 @@
     <orderEntry type="library" name="libraries" level="project" />
     <orderEntry type="library" name="libraries" level="project" />
     <orderEntry type="library" name="commons-codec-1.16.0" level="project" />
-    <orderEntry type="library" name="selenium-server-4.14.1" level="project" />
+    <orderEntry type="library" name="selenium-server-4.20.0" level="project" />
+    <orderEntry type="library" name="selenium-devtools-v124-4.20.0" level="project" />
   </component>
 </module>

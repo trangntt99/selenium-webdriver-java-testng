@@ -5,10 +5,11 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;
-import org.openqa.selenium.devtools.v118.network.Network;
-import org.openqa.selenium.devtools.v118.network.model.Headers;
+import org.openqa.selenium.devtools.v124.network.Network;
+import org.openqa.selenium.devtools.v124.network.model.Headers;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -33,7 +34,9 @@ public class Topic_13_Alert {
 
     @BeforeClass
     public void beforeClass() {
-        driver = new FirefoxDriver();
+        //driver = new FirefoxDriver();
+
+        driver = new ChromeDriver();
         explicitWait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
@@ -120,7 +123,7 @@ public class Topic_13_Alert {
         Assert.assertTrue(driver.findElement(By.xpath("//p[contains(text(), 'Congratulations! You must have the proper credentials.')]")).isDisplayed());
     }
 
-    //@Test
+    @Test
     public void TC_06_Authentication_Selenium_4x() {
         // Cách 3:
         // Thư viện Alert ko sử dụng cho Authentication Alert được

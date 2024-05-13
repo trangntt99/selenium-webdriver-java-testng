@@ -67,7 +67,7 @@ public class Topic_16_Shadow_DOM {
 
     @AfterClass
     public void afterClass() {
-        //driver.quit();
+        driver.quit();
     }
 
     public void sleepInSeconds(long timeInSecond) {

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -152,6 +153,38 @@ public class Topic_18_Window_Tab {
         sleepInSeconds(3);
 
         Assert.assertEquals(driver.findElement(By.cssSelector("div.page>div:first-child span.headword>span")).getText(), "automation");
+    }
+
+    @Test
+    public void TC_05_Harvard() {
+        driver.get("https://courses.dce.harvard.edu/");
+
+        driver.findElement(By.cssSelector("a[data-action='login']")).click();
+        sleepInSeconds(3);
+
+        switchToWindowByTitle("Harvard Division of Continuing Education Login Portal");
+        sleepInSeconds(3);
+
+        Assert.assertTrue(driver.findElement(By.cssSelector("main.login>section")).isDisplayed());
+
+        driver.close();
+        sleepInSeconds(3);
+
+        switchToWindowByTitle("DCE Course Search");
+
+        Assert.assertTrue(driver.findElement(By.cssSelector("div#sam-wait")).isDisplayed());
+
+        driver.findElement(By.cssSelector("button.sam-wait__close")).click();
+        sleepInSeconds(3);
+
+        driver.findElement(By.cssSelector("input#crit-keyword")).sendKeys("Data Science: An Artificial Ecosystem");
+        new Select(driver.findElement(By.cssSelector("select#crit-srcdb"))).selectByVisibleText("Harvard Summer School 2024");
+        new Select(driver.findElement(By.cssSelector("select#crit-summer_school"))).selectByVisibleText("Harvard College");
+        new Select(driver.findElement(By.cssSelector("select#crit-session"))).selectByVisibleText("Any Part of Term");
+        driver.findElement(By.cssSelector("button#search-button")).click();
+        sleepInSeconds(3);
+
+        Assert.assertEquals(driver.findElement(By.cssSelector("span.result__title")).getText(), "Data Science: An Artificial Ecosystem");
     }
 
     @AfterClass

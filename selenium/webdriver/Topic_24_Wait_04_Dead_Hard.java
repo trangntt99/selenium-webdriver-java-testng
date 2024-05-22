@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class Topic_23_Wait_03_Implicit {
+public class Topic_24_Wait_04_Dead_Hard {
     WebDriver driver;
     @BeforeClass
     public void beforeClass() {
@@ -19,36 +19,47 @@ public class Topic_23_Wait_03_Implicit {
 
     @Test
     public void TC_01_Equal_5_Second() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-
         driver.get("https://automationfc.github.io/dynamic-loading/");
-
         driver.findElement(By.cssSelector("div#start>button")).click();
+
+        sleepInSeconds(5);
+
         Assert.assertEquals(driver.findElement(By.cssSelector("div#finish>h4")).getText(), "Hello World!");
     }
 
     @Test
     public void TC_02_Less_Than_5_Second() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-
         driver.get("https://automationfc.github.io/dynamic-loading/");
-
         driver.findElement(By.cssSelector("div#start>button")).click();
+
+        sleepInSeconds(3);
+
+        // Implicit = 0
         Assert.assertEquals(driver.findElement(By.cssSelector("div#finish>h4")).getText(), "Hello World!");
     }
 
     @Test
     public void TC_03_Greater_Than_5_Second() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
-
         driver.get("https://automationfc.github.io/dynamic-loading/");
-
         driver.findElement(By.cssSelector("div#start>button")).click();
+
+        // Nếu như dùng Implicit/ Explicit/ Fluent Wait thì khi điều kiện được thỏa mãn thì ko cần chờ hết timeout
+        // Sleep cứng ko quan tâm
+        sleepInSeconds(10);
+
         Assert.assertEquals(driver.findElement(By.cssSelector("div#finish>h4")).getText(), "Hello World!");
     }
 
     @AfterClass
     public void afterClass() {
         driver.quit();
+    }
+
+    public void sleepInSeconds(long timeInSecond) {
+        try {
+            Thread.sleep(timeInSecond * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -15,7 +15,7 @@ public class Topic_14_Constructor {
     }
 
     public static void main(String[] args) {
-        Topic_14_Constructor topic = new Topic_14_Constructor("Automation FC");
-        Topic_14_Constructor topic = new Topic_14_Constructor(15);
+        Topic_14_Constructor topic1 = new Topic_14_Constructor("Automation FC");
+        Topic_14_Constructor topic2 = new Topic_14_Constructor(15);
     }
 }

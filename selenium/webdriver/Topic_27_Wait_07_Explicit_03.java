@@ -52,6 +52,8 @@ public class Topic_27_Wait_07_Explicit_03 {
 
     @Test
     public void TC_02_Upload_File() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
         driver.get("https://gofile.io/welcome");
 
         // Wait + Verify Spinner icon biến mất
@@ -87,8 +89,6 @@ public class Topic_27_Wait_07_Explicit_03 {
                         By.xpath("//span[text()='bg2.jpg']/ancestor::div[contains(@class,'text-md-start')]/following-sibling::div//span[text()='Download']"))).isDisplayed());
         Assert.assertTrue(explicitWait.until(ExpectedConditions.visibilityOfElementLocated(
                         By.xpath("//span[text()='bg3.jpg']/ancestor::div[contains(@class,'text-md-start')]/following-sibling::div//span[text()='Download']"))).isDisplayed());
-
-
     }
 
     @AfterClass

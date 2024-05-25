@@ -10,6 +10,7 @@ import java.time.Duration;
 
 public class Topic_00_Template {
     WebDriver driver;
+
     @BeforeClass
     public void beforeClass() {
         driver = new FirefoxDriver();

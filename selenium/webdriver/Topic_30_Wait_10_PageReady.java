@@ -42,6 +42,7 @@ public class Topic_30_Wait_10_PageReady {
 
         explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//i[contains(@class,'fa-user')]/following-sibling::p"))).click();
         driver.findElement(By.xpath("//ul[contains(@style,'display: block;')]//i[contains(@class,'fa-dot-circle')]/following-sibling::p[contains(string(),'Customers')]")).click();
+        sleepInSeconds(2);
         Assert.assertTrue(isPageLoadedSuccess());
         //Assert.assertTrue(waitAjaxLoadingInvisible());
 

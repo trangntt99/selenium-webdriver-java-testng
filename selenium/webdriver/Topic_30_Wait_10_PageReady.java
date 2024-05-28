@@ -31,18 +31,18 @@ public class Topic_30_Wait_10_PageReady {
         driver.get("https://admin-demo.nopcommerce.com");
 
         driver.findElement(By.cssSelector("input#Email")).clear();
-        driver.findElement(By.cssSelector("input#Password")).clear();
         driver.findElement(By.cssSelector("input#Email")).sendKeys("admin@yourstore.com");
+
+        driver.findElement(By.cssSelector("input#Password")).clear();
         driver.findElement(By.cssSelector("input#Password")).sendKeys("admin");
         driver.findElement(By.cssSelector("button.login-button")).click();
-        sleepInSeconds(3);
+        sleepInSeconds(2);
 
         Assert.assertTrue(isPageLoadedSuccess());
         //Assert.assertTrue(waitAjaxLoadingInvisible());
 
         explicitWait.until(ExpectedConditions.elementToBeClickable(By.xpath("//i[contains(@class,'fa-user')]/following-sibling::p"))).click();
         driver.findElement(By.xpath("//ul[contains(@style,'display: block;')]//i[contains(@class,'fa-dot-circle')]/following-sibling::p[contains(string(),'Customers')]")).click();
-        sleepInSeconds(2);
         Assert.assertTrue(isPageLoadedSuccess());
         //Assert.assertTrue(waitAjaxLoadingInvisible());
 

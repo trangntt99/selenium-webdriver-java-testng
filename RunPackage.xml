@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Orange HRM" verbose="1">
+    <listeners>
+        <listener class-name="listeners.ExtentReport"></listener>
+    </listeners>
+    <test name="Run on Chrome browser">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="version" value="121"/>
+        <classes>
+            <class name="testng.Topic_01_Sample"/>
+            <class name="testng.Topic_02_Annotations"/>
+            <class name="testng.Topic_13_Dependencies"/>
+        </classes>
+    </test>
+</suite>

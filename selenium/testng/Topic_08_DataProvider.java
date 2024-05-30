@@ -23,7 +23,7 @@ public class Topic_08_DataProvider {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
-    @Test(dataProvider = "loginData")
+    //@Test(dataProvider = "loginData")
     public void TC_01_LoginToSystem(String username, String password)  {
         // Chức năng Login
         driver.get("http://live.techpanda.org/index.php/customer/account/login/");

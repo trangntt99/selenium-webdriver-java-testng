@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UI Web Automation" verbose="1">
+    <test name="Run on Chrome browser">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="version" value="121"/>
+        <classes>
+            <class name="testng.Topic_09_Parameter" />
+        </classes>
+    </test>
+</suite>

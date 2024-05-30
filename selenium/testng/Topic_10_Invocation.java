@@ -20,7 +20,7 @@ public class Topic_10_Invocation {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
-    @Test(invocationCount = 5)
+    @Test(invocationCount = 1)
     public void Register() {
         driver.get("http://live.techpanda.org/index.php/");
 

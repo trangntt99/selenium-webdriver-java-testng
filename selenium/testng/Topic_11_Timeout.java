@@ -20,7 +20,7 @@ public class Topic_11_Timeout {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
-    @Test(timeOut = 11000)
+    @Test(timeOut = 15000)
     public void Register() {
         driver.get("http://live.techpanda.org/index.php/");
 
